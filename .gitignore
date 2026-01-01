@@ -1,0 +1,17 @@
+# Python
+backend/venv/
+__pycache__/
+*.py[cod]
+.env
+
+# Node
+node_modules/
+frontend/dist/
+
+# Databases
+*.sqlite
+*.db
+
+# OS
+.DS_Store
+Thumbs.db
