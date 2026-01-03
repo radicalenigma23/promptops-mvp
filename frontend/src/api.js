@@ -32,4 +32,19 @@ export const createPrompt = (name, content) => {
     return api.post(`/prompts/create?name=${encodeURIComponent(name)}&content=${encodeURIComponent(content)}`);
 };
 
+export const fetchPromptDetails = (promptId) => {
+    return api.get(`/prompts/${promptId}`);
+};
+
+export const createNewVersion = (promptId, content) => {
+    return api.post(`/prompts/${promptId}/version`, { content });
+};
+
+export const fetchPromptHistory = (promptId) => {
+    return api.get(`/prompts/${promptId}/versions`);
+};
+
+export const restoreVersion = (promptId, versionId) => {
+    return api.post(`/prompts/${promptId}/versions/${versionId}/restore`);
+};
 export default api;

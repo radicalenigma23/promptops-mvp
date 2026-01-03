@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Register from './Register';
 import Login from './Login';
 import Dashboard from './Dashboard';
+import PromptEditor from './PromptEditor';
 
 // A simple wrapper to check if the user is logged in
 const ProtectedRoute = ({ children }) => {
@@ -24,6 +25,14 @@ function App() {
             } 
         />
         <Route path="/" element={<Navigate to="/login" />} />
+        <Route 
+            path="/prompt/:id" 
+            element={
+                <ProtectedRoute>
+                    <PromptEditor />
+                </ProtectedRoute>
+            } 
+/>
       </Routes>
     </Router>
   );
